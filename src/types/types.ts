@@ -22,6 +22,7 @@ export type order ={
     removeItem: (id:number) => void;
     propina: number;
     porcetajePropinas: (porcentaje: number) => void
+    clear: () => void
 
 }
 

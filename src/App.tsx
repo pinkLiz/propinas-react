@@ -6,6 +6,7 @@ import ItemConsumo from "./components/ItemConsumo";
 import type { MenuItem, addItem } from "./types/types";
 
 function App() {
+  
   const [items] = useState(menuItems);
   const [orderItems, setOrderItems] = useState<addItem[]>([]);
   const [propina, setPropina] = useState(0.1);
@@ -31,6 +32,10 @@ function App() {
     setPropina(porcentaje);
   };
 
+  function clear() {
+    setOrderItems([]);
+  }
+
   return (
     <div className="flex flex-col md:flex-row gap-6 p-6 justify-center">
       <div className="p-4 text-left w-full max-w-md">
@@ -52,6 +57,8 @@ function App() {
         removeItem={remove}
         propina={propina}
         porcetajePropinas={propinas}
+        clear={clear}
+
       />
     </div>
   );
